@@ -1,0 +1,173 @@
+// Themes color pallete
+$theme1-main-bg: #3a4663;
+$theme1-secondary-bg: #242d44;
+$theme1-main-input-bg: #181f33;
+$theme1-main-key-bg: #eae3dc;
+$theme1-main-key-shadow: #b3a497;
+$theme1-secondary-key-bg: #647198;
+$theme1-secondary-key-shadow: #414e73;
+$theme1-equals-key-bg: #d03f2f;
+$theme1-equals-key-shadow: #93261a;
+$theme1-main-color: #434a59;
+$theme1-secondary-color: #ffffff;
+
+$theme2-main-bg: #e6e6e6;
+$theme2-secondary-bg: #d2cdcd;
+$theme2-main-input-bg: #eeeeee;
+$theme2-main-key-bg: #e5e4e1;
+$theme2-secondary-key-bg: #378187;
+$theme2-equals-key-bg: #c85402;
+$theme2-main-color: #36362c;
+$theme2-secondary-color: #ffffff;
+
+$theme3-main-bg: #17062a;
+$theme3-secondary-bg: #1e0936;
+$theme3-main-input-bg: #1e0936;
+$theme3-main-key-bg: #331c4d;
+$theme3-secondary-key-bg: #56077c;
+$theme3-equals-key-bg: #00ded0;
+$theme3-main-color: #ffe53d;
+$theme3-secondary-color: #ffffff;
+
+html[data-theme="theme-1"] {
+  --main-bg: #{$theme1-main-bg};
+  --secondary-bg: #{$theme1-secondary-bg};
+  --main-input-bg: #{$theme1-main-input-bg};
+  --main-key-bg: #{$theme1-main-key-bg};
+  --main-key-shadow: #{$theme1-main-key-shadow};
+  --secondary-key-bg: #{$theme1-secondary-key-bg};
+  --secondary-key-shadow: #{$theme1-secondary-key-shadow};
+  --equals-key-bg: #{$theme1-equals-key-bg};
+  --equals-key-shadow: #{$theme1-equals-key-shadow};
+  --main-color: #{$theme1-main-color};
+  --secondary-color: #{$theme1-secondary-color};
+}
+
+html[data-theme="theme-2"] {
+  --main-bg: #{$theme2-main-bg};
+  --secondary-bg: #{$theme2-secondary-bg};
+  --main-input-bg: #{$theme2-main-input-bg};
+  --main-key-bg: #{$theme2-main-key-bg};
+  --secondary-key-bg: #{$theme2-secondary-key-bg};
+  --equals-key-bg: #{$theme2-equals-key-bg};
+  --main-color: #{$theme2-main-color};
+  --secondary-color: #{$theme2-secondary-color};
+}
+
+html[data-theme="theme-3"] {
+  --main-bg: #{$theme3-main-bg};
+  --secondary-bg: #{$theme3-secondary-bg};
+  --main-input-bg: #{$theme3-main-input-bg};
+  --main-key-bg: #{$theme3-main-key-bg};
+  --secondary-key-bg: #{$theme3-secondary-key-bg};
+  --equals-key-bg: #{$theme3-equals-key-bg};
+  --main-color: #{$theme3-main-color};
+  --secondary-color: #{$theme3-secondary-color};
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 1.875rem 1.5rem 1.5625rem;
+  margin: 0;
+  background-color: var(--main-bg);
+  color: var(--secondary-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.375rem;
+}
+.theme-flex {
+  display: flex;
+  align-items: center;
+}
+.theme {
+  padding-right: 10px;
+  margin-top: 30px;
+}
+.theme-levels {
+  span:first-of-type {
+    margin-right: 10px;
+  }
+  span:nth-of-type(2) {
+    margin-right: 10px;
+  }
+}
+#theme-switch {
+  appearance: none;
+  width: 4.4375rem;
+  height: 1.625rem;
+  padding: 5px;
+  background-color: var(--secondary-bg);
+  border-radius: 13px;
+}
+.input-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  width: 100%;
+}
+
+.main__input {
+  word-wrap: break-word;
+  word-break: break-all;
+  min-width: 100%;
+  min-height: 88px;
+  padding: 1.8125rem 1.5rem 1.375rem;
+  margin-bottom: 1.5rem;
+  text-align: right;
+  background-color: var(--main-input-bg);
+  color: var(--secondary-color);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 2.5rem;
+}
+
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 13px;
+  padding: 1.5rem;
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+}
+
+.key {
+  color: var(--main-color);
+  background-color: var(--main-key-bg);
+  border-radius: 10px;
+  padding: 13px;
+  border: none;
+  box-shadow: inset 0px -4px 0px var(--main-key-shadow);
+  &:active,
+  &:focus {
+    transform: translateY(3px);
+  }
+}
+
+.del,
+.reset {
+  color: var(--secondary-color);
+  background-color: var(--secondary-key-bg);
+  box-shadow: inset 0px -4px 0px var(--secondary-key-shadow);
+}
+.reset {
+  grid-column: span 2;
+}
+.equals {
+  grid-column: span 2;
+  color: var(--secondary-color);
+  background-color: var(--equals-key-bg);
+  box-shadow: inset 0px -4px 0px var(--equals-key-shadow);
+}
